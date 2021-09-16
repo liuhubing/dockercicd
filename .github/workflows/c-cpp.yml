@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: phyzli/ubuntu18.04_xfce4_vnc4server_synopsys2016
 
     steps:
     - uses: actions/checkout@v2
