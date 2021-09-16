@@ -9,14 +9,14 @@ on:
 jobs:
   build:
 
-    runs-on: phyzli/ubuntu18.04_xfce4_vnc4server_synopsys2016
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: echo hello
-    - name: make
-      run: echo hello2
+    - name: install docker
+      run: sudo apt-get install docker
+    - name: docker pull
+      run: docker pull phyzli/ubuntu18.04_xfce4_vnc4server_synopsys2016:latest
     - name: make check
       run: echo hello3
     - name: make distcheck
