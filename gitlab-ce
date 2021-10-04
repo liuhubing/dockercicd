@@ -1,0 +1,21 @@
+#启动Docker
+mkdir /Users/GitDir/gitlab-docker/etc
+mkdir /Users/GitDir/gitlab-docker/log
+mkdir /Users/GitDir/gitlab-docker/data
+
+docker run \
+    --publish 443:443 --publish 80:80 --publish 22:22 \
+    --name gitlab \
+    -v /Users/GitDir/gitlab-docker/etc:/etc/gitlab \
+    -v /Users/GitDir/gitlab-docker/log:/var/log/gitlab \
+    -v /Users/GitDir/gitlab-docker/data:/var/opt/gitlab \
+    gitlab/gitlab-ce
+
+
+#修改默认密码
+gitlab-rails console
+
+u=User.where(id:1).first
+u.password='253227889'
+u.password_confirmation='253227889'
+u.save
