@@ -1,0 +1,16 @@
+docker run \
+    --rm \
+    -v `pwd`/../..:/work \
+    -e WORKDIR=/work \
+    -w /work/vhdl/case \
+    robzimmerman/sdcc \
+    make
+    
+    
+docker run \
+    -it \
+    -v `pwd`/../..:/work \
+    -e WORKDIR=/work \
+    -w /work/vhdl/case \
+    robzimmerman/sdcc \
+    sdcc test.c
