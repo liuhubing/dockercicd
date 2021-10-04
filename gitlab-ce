@@ -19,3 +19,8 @@ u=User.where(id:1).first
 u.password='253227889'
 u.password_confirmation='253227889'
 u.save
+
+#修改git Host地址
+
+vi /opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml
+gitlab-ctl restart
