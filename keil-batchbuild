@@ -1,0 +1,9 @@
+@echo off
+set UV=D:\Keil_v5\UV4\UV4.exe
+set UV_PRO_PATH=F:\source\systick\Keil_5\systick.uvprojx
+echo Init building ...
+echo .>build_log.txt
+%UV% -j0 -r %UV_PRO_PATH% -o %cd%\build_log.txt
+type build_log.txt
+echo Done.
+pause
